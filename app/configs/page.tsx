@@ -21,12 +21,12 @@ export default function ConfiguracoesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen" style={{ backgroundColor: '#F7F0E6' }}>
       <Navbar />
 
       <main className="container mx-auto px-6 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-800">
+          <h1 className="text-3xl font-bold" style={{ color: '#414140' }}>
             Configurações do Sistema
           </h1>
           <p className="text-gray-600 mt-2">
@@ -38,12 +38,12 @@ export default function ConfiguracoesPage() {
           <div className="md:col-span-2">
             <form onSubmit={handleSave} className="space-y-6">
               <div className="bg-white rounded-lg shadow-lg p-8">
-                <h3 className="text-xl font-bold text-gray-800 mb-6">
+                <h3 className="text-xl font-bold mb-6" style={{ color: '#414140' }}>
                   Dados da Empresa
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2">
+                    <label className="block font-medium mb-2" style={{ color: '#414140' }}>
                       Nome da Empresa
                     </label>
                     <input
@@ -52,12 +52,12 @@ export default function ConfiguracoesPage() {
                       onChange={(e) =>
                         setConfig({ ...config, nomeEmpresa: e.target.value })
                       }
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2">
+                    <label className="block font-medium mb-2" style={{ color: '#414140' }}>
                       CNPJ
                     </label>
                     <input
@@ -66,12 +66,12 @@ export default function ConfiguracoesPage() {
                       onChange={(e) =>
                         setConfig({ ...config, cnpj: e.target.value })
                       }
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2">
+                    <label className="block font-medium mb-2" style={{ color: '#414140' }}>
                       Telefone
                     </label>
                     <input
@@ -80,12 +80,12 @@ export default function ConfiguracoesPage() {
                       onChange={(e) =>
                         setConfig({ ...config, telefone: e.target.value })
                       }
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2">
+                    <label className="block font-medium mb-2" style={{ color: '#414140' }}>
                       E-mail
                     </label>
                     <input
@@ -94,19 +94,19 @@ export default function ConfiguracoesPage() {
                       onChange={(e) =>
                         setConfig({ ...config, email: e.target.value })
                       }
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
                     />
                   </div>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg shadow-lg p-8">
-                <h3 className="text-xl font-bold text-gray-800 mb-6">
+                <h3 className="text-xl font-bold mb-6" style={{ color: '#414140' }}>
                   Parâmetros de Crédito
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2">
+                    <label className="block font-medium mb-2" style={{ color: '#414140' }}>
                       Taxa de Juros Padrão (% a.m.)
                     </label>
                     <input
@@ -116,12 +116,12 @@ export default function ConfiguracoesPage() {
                       onChange={(e) =>
                         setConfig({ ...config, taxaPadrao: e.target.value })
                       }
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2">
+                    <label className="block font-medium mb-2" style={{ color: '#414140' }}>
                       Número de Parcelas Padrão
                     </label>
                     <select
@@ -129,7 +129,7 @@ export default function ConfiguracoesPage() {
                       onChange={(e) =>
                         setConfig({ ...config, parcelasPadrao: e.target.value })
                       }
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
                     >
                       <option value="24">24 meses</option>
                       <option value="36">36 meses</option>
@@ -140,7 +140,7 @@ export default function ConfiguracoesPage() {
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2">
+                    <label className="block font-medium mb-2" style={{ color: '#414140' }}>
                       Valor Mínimo de Crédito
                     </label>
                     <input
@@ -149,12 +149,12 @@ export default function ConfiguracoesPage() {
                       onChange={(e) =>
                         setConfig({ ...config, valorMinimo: e.target.value })
                       }
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2">
+                    <label className="block font-medium mb-2" style={{ color: '#414140' }}>
                       Valor Máximo de Crédito
                     </label>
                     <input
@@ -163,14 +163,14 @@ export default function ConfiguracoesPage() {
                       onChange={(e) =>
                         setConfig({ ...config, valorMaximo: e.target.value })
                       }
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
                     />
                   </div>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg shadow-lg p-8">
-                <h3 className="text-xl font-bold text-gray-800 mb-6">
+                <h3 className="text-xl font-bold mb-6" style={{ color: '#414140' }}>
                   Integração com Órgãos
                 </h3>
                 <div className="space-y-4">
@@ -181,7 +181,8 @@ export default function ConfiguracoesPage() {
                 </div>
                 <button
                   type="button"
-                  className="mt-4 text-indigo-600 hover:text-indigo-800 font-medium"
+                  className="mt-4 hover:opacity-80 font-medium"
+                  style={{ color: '#BEA04A' }}
                 >
                   + Adicionar Novo Órgão
                 </button>
@@ -189,7 +190,8 @@ export default function ConfiguracoesPage() {
 
               <button
                 type="submit"
-                className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors font-medium text-lg"
+                className="w-full text-white py-3 rounded-lg hover:opacity-90 transition-colors font-medium text-lg"
+                style={{ backgroundColor: '#BEA04A' }}
               >
                 Salvar Configurações
               </button>
@@ -198,7 +200,7 @@ export default function ConfiguracoesPage() {
 
           <div className="space-y-6">
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-lg font-bold text-gray-800 mb-4">
+              <h3 className="text-lg font-bold mb-4" style={{ color: '#414140' }}>
                 Informações do Sistema
               </h3>
               <div className="space-y-3 text-sm">
@@ -209,9 +211,9 @@ export default function ConfiguracoesPage() {
               </div>
             </div>
 
-            <div className="bg-indigo-50 rounded-lg p-6">
-              <h3 className="text-lg font-bold text-gray-800 mb-3">💡 Dica</h3>
-              <p className="text-gray-700 text-sm">
+            <div className="rounded-lg p-6" style={{ backgroundColor: '#F7F0E6' }}>
+              <h3 className="text-lg font-bold mb-3" style={{ color: '#414140' }}>Dica</h3>
+              <p className="text-sm" style={{ color: '#414140' }}>
                 Mantenha os dados da empresa sempre atualizados no Portal do
                 Cliente para aumentar a credibilidade e reduzir o receio de
                 golpes.
@@ -219,15 +221,15 @@ export default function ConfiguracoesPage() {
             </div>
 
             <div className="bg-green-50 rounded-lg p-6">
-              <h3 className="text-lg font-bold text-gray-800 mb-3">
-                ✅ Vantagens do Sistema
+              <h3 className="text-lg font-bold mb-3" style={{ color: '#414140' }}>
+                Vantagens do Sistema
               </h3>
-              <ul className="text-sm text-gray-700 space-y-2">
-                <li>✓ Gestão completa de propostas</li>
-                <li>✓ Portal transparente para clientes</li>
-                <li>✓ Controle de contratos consignados</li>
-                <li>✓ Relatórios automáticos</li>
-                <li>✓ Sem inadimplência</li>
+              <ul className="text-sm space-y-2" style={{ color: '#414140' }}>
+                <li>Gestão completa de propostas</li>
+                <li>Portal transparente para clientes</li>
+                <li>Controle de contratos consignados</li>
+                <li>Relatórios automáticos</li>
+                <li>Sem inadimplência</li>
               </ul>
             </div>
           </div>
@@ -241,7 +243,7 @@ function OrgaoIntegracao({ nome, status }: { nome: string; status: string }) {
   return (
     <div className="flex justify-between items-center p-4 border border-gray-200 rounded-lg">
       <div>
-        <div className="font-medium text-gray-800">{nome}</div>
+        <div className="font-medium" style={{ color: '#414140' }}>{nome}</div>
         <div className="text-sm text-gray-500">
           Convênio para desconto em folha
         </div>
@@ -263,7 +265,7 @@ function InfoItem({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex justify-between">
       <span className="text-gray-600">{label}:</span>
-      <span className="font-medium text-gray-800">{value}</span>
+      <span className="font-medium" style={{ color: '#414140' }}>{value}</span>
     </div>
   );
 }

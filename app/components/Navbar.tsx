@@ -7,20 +7,20 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const navItems = [
-    { href: "/", label: "Início", icon: "🏠" },
-    { href: "/clients", label: "Clientes", icon: "👥" },
-    { href: "/credit-proposal", label: "Propostas", icon: "💰" },
-    { href: "/contracts", label: "Contratos", icon: "📑" },
-    { href: "/custumer-portal", label: "Portal", icon: "🔒" },
-    { href: "/reports", label: "Relatórios", icon: "📊" },
-    { href: "/configs", label: "Configurações", icon: "⚙️" },
+    { href: "/", label: "Início" },
+    { href: "/clients", label: "Clientes" },
+    { href: "/credit-proposal", label: "Propostas" },
+    { href: "/contracts", label: "Contratos" },
+    { href: "/custumer-portal", label: "Portal" },
+    { href: "/reports", label: "Relatórios" },
+    { href: "/configs", label: "Configurações" },
   ];
 
   return (
     <nav className="bg-white shadow-md">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-indigo-600">
+          <Link href="/" className="text-2xl font-bold" style={{ color: '#BEA04A' }}>
             Sistema de Crédito Consignado
           </Link>
 
@@ -31,20 +31,19 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-4 py-2 rounded-lg transition-colors flex items-center gap-2 ${
-                    isActive
-                      ? "bg-indigo-600 text-white"
-                      : "text-gray-700 hover:bg-indigo-50"
-                  }`}
+                  className={`px-4 py-2 rounded-lg transition-colors font-medium`}
+                  style={{
+                    backgroundColor: isActive ? '#BEA04A' : 'transparent',
+                    color: isActive ? '#FFFFFF' : '#414140'
+                  }}
                 >
-                  <span>{item.icon}</span>
-                  <span className="font-medium">{item.label}</span>
+                  {item.label}
                 </Link>
               );
             })}
           </div>
 
-          <button className="md:hidden text-gray-700">
+          <button className="md:hidden" style={{ color: '#414140' }}>
             <svg
               className="w-6 h-6"
               fill="none"
