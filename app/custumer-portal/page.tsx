@@ -107,7 +107,7 @@ export default function PortalClientePage() {
               </div>
 
               <div className="space-y-6">
-                <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-lg p-6 text-white">
+                <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-lg p-6">
                   <h3 className="text-xl font-bold mb-2">
                     100% Seguro e Transparente
                   </h3>
@@ -117,7 +117,7 @@ export default function PortalClientePage() {
                   </p>
                 </div>
 
-                <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-lg p-6 text-white">
+                <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-lg p-6">
                   <h3 className="text-xl font-bold mb-2">Acesso 24/7</h3>
                   <p>
                     Consulte o status da sua proposta e os descontos realizados
@@ -125,7 +125,7 @@ export default function PortalClientePage() {
                   </p>
                 </div>
 
-                <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-lg p-6 text-white">
+                <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-lg p-6">
                   <h3 className="text-xl font-bold mb-2">Empresa Verificada</h3>
                   <p>
                     Operamos há mais de 1 ano no mercado com total regularidade
