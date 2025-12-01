@@ -20,8 +20,12 @@ export default function Navbar() {
     <nav className="bg-white shadow-md">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold" style={{ color: '#BEA04A' }}>
-            Sistema de Crédito Consignado
+          <Link
+            href="/"
+            className="text-2xl font-bold"
+            style={{ color: "#BEA04A" }}
+          >
+            Organiza Promotora
           </Link>
 
           <div className="hidden md:flex space-x-1">
@@ -33,8 +37,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`px-4 py-2 rounded-lg transition-colors font-medium`}
                   style={{
-                    backgroundColor: isActive ? '#BEA04A' : 'transparent',
-                    color: isActive ? '#FFFFFF' : '#414140'
+                    backgroundColor: isActive ? "#BEA04A" : "transparent",
+                    color: isActive ? "#FFFFFF" : "#414140",
                   }}
                 >
                   {item.label}
@@ -43,7 +47,7 @@ export default function Navbar() {
             })}
           </div>
 
-          <button className="md:hidden" style={{ color: '#414140' }}>
+          <button className="md:hidden" style={{ color: "#414140" }}>
             <svg
               className="w-6 h-6"
               fill="none"

@@ -18,11 +18,18 @@ export default function PortalClientePage() {
 
   if (!logado) {
     return (
-      <div className="min-h-screen" style={{ background: 'linear-gradient(to bottom right, #BEA04A, #8B7355)' }}>
+      <div
+        className="min-h-screen"
+        style={{
+          background: "linear-gradient(to bottom right, #BEA04A, #8B7355)",
+        }}
+      >
+        <Navbar />
+
         <nav className="bg-white bg-opacity-10 backdrop-blur-md">
           <div className="container mx-auto px-6 py-4">
             <div className="text-2xl font-bold text-white">
-              Sistema de Crédito Consignado
+              Organiza Promotora
             </div>
           </div>
         </nav>
@@ -38,12 +45,18 @@ export default function PortalClientePage() {
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg shadow-2xl p-8">
-                <h2 className="text-2xl font-bold mb-6" style={{ color: '#414140' }}>
+                <h2
+                  className="text-2xl font-bold mb-6"
+                  style={{ color: "#414140" }}
+                >
                   Acesse sua Área
                 </h2>
                 <form onSubmit={handleLogin} className="space-y-6">
                   <div>
-                    <label className="block font-medium mb-2" style={{ color: '#414140' }}>
+                    <label
+                      className="block font-medium mb-2"
+                      style={{ color: "#414140" }}
+                    >
                       CPF
                     </label>
                     <input
@@ -57,7 +70,10 @@ export default function PortalClientePage() {
                   </div>
 
                   <div>
-                    <label className="block font-medium mb-2" style={{ color: '#414140' }}>
+                    <label
+                      className="block font-medium mb-2"
+                      style={{ color: "#414140" }}
+                    >
                       Código de Acesso
                     </label>
                     <input
@@ -73,7 +89,7 @@ export default function PortalClientePage() {
                   <button
                     type="submit"
                     className="w-full text-white py-3 rounded-lg hover:opacity-90 transition-colors font-medium text-lg"
-                    style={{ backgroundColor: '#BEA04A' }}
+                    style={{ backgroundColor: "#BEA04A" }}
                   >
                     Acessar Portal
                   </button>
@@ -83,7 +99,7 @@ export default function PortalClientePage() {
                   <a
                     href="#"
                     className="hover:opacity-80 text-sm"
-                    style={{ color: '#BEA04A' }}
+                    style={{ color: "#BEA04A" }}
                   >
                     Não recebi meu código de acesso
                   </a>
@@ -120,12 +136,15 @@ export default function PortalClientePage() {
             </div>
 
             <div className="mt-12 bg-white rounded-lg shadow-2xl p-8">
-              <h3 className="text-2xl font-bold text-center mb-6" style={{ color: '#414140' }}>
+              <h3
+                className="text-2xl font-bold text-center mb-6"
+                style={{ color: "#414140" }}
+              >
                 Por que confiar em nós?
               </h3>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
-                  <h4 className="font-bold mb-2" style={{ color: '#414140' }}>
+                  <h4 className="font-bold mb-2" style={{ color: "#414140" }}>
                     Regularidade Total
                   </h4>
                   <p className="text-gray-600">
@@ -134,7 +153,7 @@ export default function PortalClientePage() {
                   </p>
                 </div>
                 <div className="text-center">
-                  <h4 className="font-bold mb-2" style={{ color: '#414140' }}>
+                  <h4 className="font-bold mb-2" style={{ color: "#414140" }}>
                     Parceiros Oficiais
                   </h4>
                   <p className="text-gray-600">
@@ -142,7 +161,7 @@ export default function PortalClientePage() {
                   </p>
                 </div>
                 <div className="text-center">
-                  <h4 className="font-bold mb-2" style={{ color: '#414140' }}>
+                  <h4 className="font-bold mb-2" style={{ color: "#414140" }}>
                     Sem Inadimplência
                   </h4>
                   <p className="text-gray-600">
@@ -160,12 +179,12 @@ export default function PortalClientePage() {
 
   // Área logada do cliente
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F7F0E6' }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#F7F0E6" }}>
       <Navbar />
 
       <main className="container mx-auto px-6 py-8">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold" style={{ color: '#BEA04A' }}>
+          <h1 className="text-2xl font-bold" style={{ color: "#BEA04A" }}>
             Minha Área - Portal do Cliente
           </h1>
           <button
@@ -176,22 +195,39 @@ export default function PortalClientePage() {
           </button>
         </div>
         <div className="mb-8">
-          <h2 className="text-3xl font-bold" style={{ color: '#414140' }}>Olá, João Silva!</h2>
+          <h2 className="text-3xl font-bold" style={{ color: "#414140" }}>
+            Olá, João Silva!
+          </h2>
           <p className="text-gray-600 mt-2">
             Bem-vindo ao seu portal de acompanhamento
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="rounded-lg shadow-lg p-6 text-white" style={{ background: 'linear-gradient(to bottom right, #4ade80, #22c55e)' }}>
+          <div
+            className="rounded-lg shadow-lg p-6 text-white"
+            style={{
+              background: "linear-gradient(to bottom right, #4ade80, #22c55e)",
+            }}
+          >
             <div className="text-sm mb-1">Status da Proposta</div>
             <div className="text-2xl font-bold">Aprovada</div>
           </div>
-          <div className="rounded-lg shadow-lg p-6 text-white" style={{ background: 'linear-gradient(to bottom right, #BEA04A, #8B7355)' }}>
+          <div
+            className="rounded-lg shadow-lg p-6 text-white"
+            style={{
+              background: "linear-gradient(to bottom right, #BEA04A, #8B7355)",
+            }}
+          >
             <div className="text-sm mb-1">Valor Aprovado</div>
             <div className="text-2xl font-bold">R$ 15.000,00</div>
           </div>
-          <div className="rounded-lg shadow-lg p-6 text-white" style={{ background: 'linear-gradient(to bottom right, #a855f7, #9333ea)' }}>
+          <div
+            className="rounded-lg shadow-lg p-6 text-white"
+            style={{
+              background: "linear-gradient(to bottom right, #a855f7, #9333ea)",
+            }}
+          >
             <div className="text-sm mb-1">Próximo Desconto</div>
             <div className="text-2xl font-bold">05/12/2024</div>
           </div>
@@ -199,7 +235,7 @@ export default function PortalClientePage() {
 
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-xl font-bold mb-6" style={{ color: '#414140' }}>
+            <h3 className="text-xl font-bold mb-6" style={{ color: "#414140" }}>
               Andamento da Proposta
             </h3>
             <div className="space-y-4">
@@ -238,7 +274,10 @@ export default function PortalClientePage() {
 
           <div className="space-y-6">
             <div className="bg-white rounded-lg shadow-lg p-8">
-              <h3 className="text-xl font-bold mb-6" style={{ color: '#414140' }}>
+              <h3
+                className="text-xl font-bold mb-6"
+                style={{ color: "#414140" }}
+              >
                 Detalhes do Contrato
               </h3>
               <div className="space-y-4">
@@ -258,33 +297,39 @@ export default function PortalClientePage() {
                 <div className="bg-gray-200 rounded-full h-3">
                   <div
                     className="h-3 rounded-full"
-                    style={{ backgroundColor: '#BEA04A', width: "25%" }}
+                    style={{ backgroundColor: "#BEA04A", width: "25%" }}
                   ></div>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-lg p-6" style={{ backgroundColor: '#F7F0E6' }}>
-              <h4 className="font-bold mb-3" style={{ color: '#414140' }}>
+            <div
+              className="rounded-lg p-6"
+              style={{ backgroundColor: "#F7F0E6" }}
+            >
+              <h4 className="font-bold mb-3" style={{ color: "#414140" }}>
                 Verificação de Autenticidade
               </h4>
-              <p className="mb-4" style={{ color: '#414140' }}>
+              <p className="mb-4" style={{ color: "#414140" }}>
                 Seu contrato é autêntico e pode ser verificado através do
                 código:
               </p>
-              <div className="bg-white rounded p-3 font-mono text-center text-lg font-bold" style={{ color: '#BEA04A' }}>
+              <div
+                className="bg-white rounded p-3 font-mono text-center text-lg font-bold"
+                style={{ color: "#BEA04A" }}
+              >
                 CONS-2024-001-ABCD1234
               </div>
             </div>
 
             <div className="bg-green-50 rounded-lg p-6">
-              <h4 className="font-bold mb-3" style={{ color: '#414140' }}>
+              <h4 className="font-bold mb-3" style={{ color: "#414140" }}>
                 Suporte Direto
               </h4>
-              <p className="mb-4" style={{ color: '#414140' }}>
+              <p className="mb-4" style={{ color: "#414140" }}>
                 Dúvidas? Entre em contato conosco:
               </p>
-              <div className="space-y-2 text-sm" style={{ color: '#414140' }}>
+              <div className="space-y-2 text-sm" style={{ color: "#414140" }}>
                 <div>WhatsApp: (51) 99999-9999</div>
                 <div>Email: suporte@creditoconsignado.com.br</div>
                 <div>Horário: Seg-Sex 9h às 18h</div>
@@ -294,26 +339,41 @@ export default function PortalClientePage() {
         </div>
 
         <div className="mt-8 bg-white rounded-lg shadow-lg p-8">
-          <h3 className="text-xl font-bold mb-6" style={{ color: '#414140' }}>
+          <h3 className="text-xl font-bold mb-6" style={{ color: "#414140" }}>
             Últimos Descontos em Folha
           </h3>
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead style={{ backgroundColor: '#F7F0E6' }}>
+              <thead style={{ backgroundColor: "#F7F0E6" }}>
                 <tr>
-                  <th className="px-6 py-3 text-left font-semibold" style={{ color: '#414140' }}>
+                  <th
+                    className="px-6 py-3 text-left font-semibold"
+                    style={{ color: "#414140" }}
+                  >
                     Mês/Ano
                   </th>
-                  <th className="px-6 py-3 text-left font-semibold" style={{ color: '#414140' }}>
+                  <th
+                    className="px-6 py-3 text-left font-semibold"
+                    style={{ color: "#414140" }}
+                  >
                     Parcela
                   </th>
-                  <th className="px-6 py-3 text-left font-semibold" style={{ color: '#414140' }}>
+                  <th
+                    className="px-6 py-3 text-left font-semibold"
+                    style={{ color: "#414140" }}
+                  >
                     Valor
                   </th>
-                  <th className="px-6 py-3 text-left font-semibold" style={{ color: '#414140' }}>
+                  <th
+                    className="px-6 py-3 text-left font-semibold"
+                    style={{ color: "#414140" }}
+                  >
                     Data Desconto
                   </th>
-                  <th className="px-6 py-3 text-left font-semibold" style={{ color: '#414140' }}>
+                  <th
+                    className="px-6 py-3 text-left font-semibold"
+                    style={{ color: "#414140" }}
+                  >
                     Status
                   </th>
                 </tr>
@@ -325,11 +385,16 @@ export default function PortalClientePage() {
                   { mes: "Setembro/2024", parcela: 10, data: "05/09/2024" },
                 ].map((item, index) => (
                   <tr key={index} className="border-t">
-                    <td className="px-6 py-4" style={{ color: '#414140' }}>{item.mes}</td>
+                    <td className="px-6 py-4" style={{ color: "#414140" }}>
+                      {item.mes}
+                    </td>
                     <td className="px-6 py-4 text-gray-600">
                       {item.parcela}/48
                     </td>
-                    <td className="px-6 py-4 font-medium" style={{ color: '#414140' }}>
+                    <td
+                      className="px-6 py-4 font-medium"
+                      style={{ color: "#414140" }}
+                    >
                       R$ 425,50
                     </td>
                     <td className="px-6 py-4 text-gray-600">{item.data}</td>
@@ -373,7 +438,9 @@ function TimelineItem({
       </div>
       <div className="ml-4 flex-1">
         <div className="flex justify-between items-start">
-          <h4 className="font-bold" style={{ color: '#414140' }}>{title}</h4>
+          <h4 className="font-bold" style={{ color: "#414140" }}>
+            {title}
+          </h4>
           <span className="text-sm text-gray-500">{date}</span>
         </div>
         <p className="text-gray-600 text-sm mt-1">{description}</p>
@@ -386,7 +453,9 @@ function DetailRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex justify-between items-center pb-3 border-b border-gray-100">
       <span className="text-gray-600">{label}</span>
-      <span className="font-medium" style={{ color: '#414140' }}>{value}</span>
+      <span className="font-medium" style={{ color: "#414140" }}>
+        {value}
+      </span>
     </div>
   );
 }
