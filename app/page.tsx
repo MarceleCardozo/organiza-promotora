@@ -1,65 +1,138 @@
-import Image from "next/image";
+import Link from "next/link";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      <Navbar />
+
+      <main className="container mx-auto px-6 py-12">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            Gestão Completa de Crédito Consignado
+          </h2>
+          <p className="text-xl text-gray-600">
+            Transparência e segurança para você e seus clientes
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <StatCard title="Clientes Ativos" value="247" icon="👥" />
+          <StatCard title="Propostas Ativas" value="15" icon="📋" />
+          <StatCard title="Contratos Ativos" value="189" icon="📄" />
+          <StatCard title="Taxa de Conversão" value="78%" icon="📈" />
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <MenuCard
+            title="Cadastro de Clientes"
+            description="Registre novos clientes via prospecção telefônica"
+            icon="📞"
+            href="/clients"
+            color="bg-blue-500"
+          />
+          <MenuCard
+            title="Propostas de Crédito"
+            description="Analise e gerencie propostas de crédito"
+            icon="💰"
+            href="/credit-proposal"
+            color="bg-green-500"
+          />
+          <MenuCard
+            title="Contratos"
+            description="Acompanhe contratos e parcelas descontadas"
+            icon="📑"
+            href="/contracts"
+            color="bg-purple-500"
+          />
+          <MenuCard
+            title="Portal do Cliente"
+            description="Área transparente para aumentar credibilidade"
+            icon="🔒"
+            href="/custumer-portal"
+            color="bg-indigo-500"
+          />
+          <MenuCard
+            title="Relatórios"
+            description="Análises e métricas do negócio"
+            icon="📊"
+            href="/reports"
+            color="bg-orange-500"
+          />
+          <MenuCard
+            title="Configurações"
+            description="Ajustes e parametrizações do sistema"
+            icon="⚙️"
+            href="/configs"
+            color="bg-gray-500"
+          />
+        </div>
+
+        <div className="mt-12 bg-white rounded-lg shadow-lg p-8">
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">
+            🛡️ Combata a Desconfiança dos Clientes
+          </h3>
+          <p className="text-gray-600 mb-4">
+            Nosso sistema oferece transparência total através do Portal do
+            Cliente, onde seus clientes podem:
+          </p>
+          <ul className="list-disc list-inside text-gray-600 space-y-2">
+            <li>Acompanhar o status da proposta em tempo real</li>
+            <li>Visualizar dados da empresa e certificações</li>
+            <li>Verificar autenticidade do contrato</li>
+            <li>Acessar histórico completo de parcelas descontadas</li>
+            <li>Contar com canal de suporte direto</li>
+          </ul>
         </div>
       </main>
     </div>
+  );
+}
+
+function StatCard({
+  title,
+  value,
+  icon,
+}: {
+  title: string;
+  value: string;
+  icon: string;
+}) {
+  return (
+    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-3xl">{icon}</span>
+        <span className="text-3xl font-bold text-indigo-600">{value}</span>
+      </div>
+      <h3 className="text-gray-600 font-medium">{title}</h3>
+    </div>
+  );
+}
+
+function MenuCard({
+  title,
+  description,
+  icon,
+  href,
+  color,
+}: {
+  title: string;
+  description: string;
+  icon: string;
+  href: string;
+  color: string;
+}) {
+  return (
+    <Link href={href}>
+      <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer h-full">
+        <div
+          className={`${color} w-12 h-12 rounded-lg flex items-center justify-center text-2xl mb-4`}
+        >
+          {icon}
+        </div>
+        <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
+        <p className="text-gray-600">{description}</p>
+      </div>
+    </Link>
   );
 }
