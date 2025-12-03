@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -20,12 +21,21 @@ export default function Navbar() {
     <nav className="bg-white shadow-md">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link
-            href="/"
-            className="text-2xl font-bold"
-            style={{ color: "#BEA04A" }}
-          >
-            Organiza Promotora
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/logo.jpg"
+              alt="Organiza Promotora"
+              width={40}
+              height={40}
+              className="mix-blend-multiply"
+              priority
+            />
+            <span
+              className="text-2xl font-bold hidden sm:block"
+              style={{ color: "#BEA04A" }}
+            >
+              Organiza Promotora
+            </span>
           </Link>
 
           <div className="hidden md:flex space-x-1">
