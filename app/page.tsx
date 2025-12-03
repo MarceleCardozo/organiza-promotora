@@ -1,17 +1,18 @@
-import Link from "next/link";
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
+import { StatCard } from "../components/StatCard";
+import { MenuCard } from "../components/MenuCard";
 
 export default function Home() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F7F0E6' }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#F7F0E6" }}>
       <Navbar />
 
       <main className="container mx-auto px-6 py-12">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4" style={{ color: '#414140' }}>
+          <h2 className="text-4xl font-bold mb-4" style={{ color: "#414140" }}>
             Gestão Completa de Crédito Consignado
           </h2>
-          <p className="text-xl" style={{ color: '#414140' }}>
+          <p className="text-xl" style={{ color: "#414140" }}>
             Transparência e segurança para você e seus clientes
           </p>
         </div>
@@ -57,14 +58,17 @@ export default function Home() {
         </div>
 
         <div className="mt-12 bg-white rounded-lg shadow-lg p-8">
-          <h3 className="text-2xl font-bold mb-4" style={{ color: '#414140' }}>
+          <h3 className="text-2xl font-bold mb-4" style={{ color: "#414140" }}>
             Combata a Desconfiança dos Clientes
           </h3>
-          <p className="mb-4" style={{ color: '#414140' }}>
+          <p className="mb-4" style={{ color: "#414140" }}>
             Nosso sistema oferece transparência total através do Portal do
             Cliente, onde seus clientes podem:
           </p>
-          <ul className="list-disc list-inside space-y-2" style={{ color: '#414140' }}>
+          <ul
+            className="list-disc list-inside space-y-2"
+            style={{ color: "#414140" }}
+          >
             <li>Acompanhar o status da proposta em tempo real</li>
             <li>Visualizar dados da empresa e certificações</li>
             <li>Verificar autenticidade do contrato</li>
@@ -74,41 +78,5 @@ export default function Home() {
         </div>
       </main>
     </div>
-  );
-}
-
-function StatCard({
-  title,
-  value,
-}: {
-  title: string;
-  value: string;
-}) {
-  return (
-    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-3xl font-bold" style={{ color: '#BEA04A' }}>{value}</span>
-      </div>
-      <h3 className="font-medium" style={{ color: '#414140' }}>{title}</h3>
-    </div>
-  );
-}
-
-function MenuCard({
-  title,
-  description,
-  href,
-}: {
-  title: string;
-  description: string;
-  href: string;
-}) {
-  return (
-    <Link href={href}>
-      <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer h-full border-l-4" style={{ borderColor: '#BEA04A' }}>
-        <h3 className="text-xl font-bold mb-2" style={{ color: '#414140' }}>{title}</h3>
-        <p style={{ color: '#414140' }}>{description}</p>
-      </div>
-    </Link>
   );
 }

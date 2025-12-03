@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
+import { OrgaoIntegracao } from "@/components/OrgaoIntegracao";
+import { InfoItem } from "@/components/InfoItem";
 
 export default function ConfiguracoesPage() {
   const [config, setConfig] = useState({
@@ -282,41 +284,6 @@ export default function ConfiguracoesPage() {
           </div>
         </div>
       </main>
-    </div>
-  );
-}
-
-function OrgaoIntegracao({ nome, status }: { nome: string; status: string }) {
-  return (
-    <div className="flex justify-between items-center p-4 border border-gray-200 rounded-lg">
-      <div>
-        <div className="font-medium" style={{ color: "#414140" }}>
-          {nome}
-        </div>
-        <div className="text-sm text-gray-500">
-          Convênio para desconto em folha
-        </div>
-      </div>
-      <span
-        className={`px-3 py-1 rounded-full text-sm font-medium ${
-          status === "Ativo"
-            ? "bg-green-100 text-green-800"
-            : "bg-yellow-100 text-yellow-800"
-        }`}
-      >
-        {status}
-      </span>
-    </div>
-  );
-}
-
-function InfoItem({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex justify-between">
-      <span className="text-gray-600">{label}:</span>
-      <span className="font-medium" style={{ color: "#414140" }}>
-        {value}
-      </span>
     </div>
   );
 }

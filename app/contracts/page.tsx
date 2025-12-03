@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 
 export default function ContratosPage() {
   const [contratos] = useState([
@@ -50,12 +50,12 @@ export default function ContratosPage() {
     : null;
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F7F0E6' }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#F7F0E6" }}>
       <Navbar />
 
       <main className="container mx-auto px-6 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold" style={{ color: '#414140' }}>
+          <h1 className="text-3xl font-bold" style={{ color: "#414140" }}>
             Acompanhamento de Contratos
           </h1>
           <p className="text-gray-600 mt-2">
@@ -65,7 +65,10 @@ export default function ContratosPage() {
 
         <div className="grid md:grid-cols-4 gap-6 mb-8">
           <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="text-2xl font-bold mb-2" style={{ color: '#414140' }}>
+            <div
+              className="text-2xl font-bold mb-2"
+              style={{ color: "#414140" }}
+            >
               {contratos.filter((c) => c.status === "Ativo").length}
             </div>
             <div className="text-gray-600">Contratos Ativos</div>
@@ -81,11 +84,13 @@ export default function ContratosPage() {
             <div className="text-gray-600">Receita Mensal</div>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="text-2xl font-bold" style={{ color: '#BEA04A' }}>100%</div>
+            <div className="text-2xl font-bold" style={{ color: "#BEA04A" }}>
+              100%
+            </div>
             <div className="text-gray-600">Taxa de Adimplência</div>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="text-2xl font-bold" style={{ color: '#414140' }}>
+            <div className="text-2xl font-bold" style={{ color: "#414140" }}>
               {contratos.filter((c) => c.status === "Finalizado").length}
             </div>
             <div className="text-gray-600">Finalizados</div>
@@ -110,27 +115,48 @@ export default function ContratosPage() {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead style={{ backgroundColor: '#F7F0E6' }}>
+              <thead style={{ backgroundColor: "#F7F0E6" }}>
                 <tr>
-                  <th className="px-6 py-4 text-left font-semibold" style={{ color: '#414140' }}>
+                  <th
+                    className="px-6 py-4 text-left font-semibold"
+                    style={{ color: "#414140" }}
+                  >
                     Contrato
                   </th>
-                  <th className="px-6 py-4 text-left font-semibold" style={{ color: '#414140' }}>
+                  <th
+                    className="px-6 py-4 text-left font-semibold"
+                    style={{ color: "#414140" }}
+                  >
                     Cliente
                   </th>
-                  <th className="px-6 py-4 text-left font-semibold" style={{ color: '#414140' }}>
+                  <th
+                    className="px-6 py-4 text-left font-semibold"
+                    style={{ color: "#414140" }}
+                  >
                     Valor
                   </th>
-                  <th className="px-6 py-4 text-left font-semibold" style={{ color: '#414140' }}>
+                  <th
+                    className="px-6 py-4 text-left font-semibold"
+                    style={{ color: "#414140" }}
+                  >
                     Progresso
                   </th>
-                  <th className="px-6 py-4 text-left font-semibold" style={{ color: '#414140' }}>
+                  <th
+                    className="px-6 py-4 text-left font-semibold"
+                    style={{ color: "#414140" }}
+                  >
                     Próx. Desconto
                   </th>
-                  <th className="px-6 py-4 text-left font-semibold" style={{ color: '#414140' }}>
+                  <th
+                    className="px-6 py-4 text-left font-semibold"
+                    style={{ color: "#414140" }}
+                  >
                     Status
                   </th>
-                  <th className="px-6 py-4 text-left font-semibold" style={{ color: '#414140' }}>
+                  <th
+                    className="px-6 py-4 text-left font-semibold"
+                    style={{ color: "#414140" }}
+                  >
                     Ações
                   </th>
                 </tr>
@@ -142,18 +168,24 @@ export default function ContratosPage() {
                   return (
                     <tr key={contrato.id} className="border-t hover:bg-gray-50">
                       <td className="px-6 py-4">
-                        <div className="font-medium" style={{ color: '#414140' }}>
+                        <div
+                          className="font-medium"
+                          style={{ color: "#414140" }}
+                        >
                           {contrato.numero}
                         </div>
                         <div className="text-sm text-gray-500">
                           {contrato.dataContrato}
                         </div>
                       </td>
-                      <td className="px-6 py-4" style={{ color: '#414140' }}>
+                      <td className="px-6 py-4" style={{ color: "#414140" }}>
                         {contrato.cliente}
                       </td>
                       <td className="px-6 py-4">
-                        <div className="font-medium" style={{ color: '#414140' }}>
+                        <div
+                          className="font-medium"
+                          style={{ color: "#414140" }}
+                        >
                           R$ {contrato.valor.toLocaleString("pt-BR")}
                         </div>
                         <div className="text-sm text-gray-500">
@@ -167,11 +199,17 @@ export default function ContratosPage() {
                             <div className="bg-gray-200 rounded-full h-2">
                               <div
                                 className="h-2 rounded-full"
-                                style={{ backgroundColor: '#BEA04A', width: `${percentual}%` }}
+                                style={{
+                                  backgroundColor: "#BEA04A",
+                                  width: `${percentual}%`,
+                                }}
                               ></div>
                             </div>
                           </div>
-                          <div className="text-sm font-medium whitespace-nowrap" style={{ color: '#414140' }}>
+                          <div
+                            className="text-sm font-medium whitespace-nowrap"
+                            style={{ color: "#414140" }}
+                          >
                             {contrato.parcelasPagas}/{contrato.parcelas}
                           </div>
                         </div>
@@ -194,7 +232,7 @@ export default function ContratosPage() {
                         <button
                           onClick={() => setSelectedContrato(contrato.id)}
                           className="hover:opacity-80 font-medium"
-                          style={{ color: '#BEA04A' }}
+                          style={{ color: "#BEA04A" }}
                         >
                           Ver Detalhes
                         </button>
@@ -213,7 +251,10 @@ export default function ContratosPage() {
               <div className="p-8">
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h2 className="text-2xl font-bold mb-2" style={{ color: '#414140' }}>
+                    <h2
+                      className="text-2xl font-bold mb-2"
+                      style={{ color: "#414140" }}
+                    >
                       Detalhes do Contrato
                     </h2>
                     <p className="text-gray-600">{contrato.numero}</p>
@@ -229,7 +270,10 @@ export default function ContratosPage() {
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
                   <div>
                     <label className="text-gray-600 text-sm">Cliente</label>
-                    <div className="text-lg font-medium" style={{ color: '#414140' }}>
+                    <div
+                      className="text-lg font-medium"
+                      style={{ color: "#414140" }}
+                    >
                       {contrato.cliente}
                     </div>
                   </div>
@@ -237,7 +281,10 @@ export default function ContratosPage() {
                     <label className="text-gray-600 text-sm">
                       Data do Contrato
                     </label>
-                    <div className="text-lg font-medium" style={{ color: '#414140' }}>
+                    <div
+                      className="text-lg font-medium"
+                      style={{ color: "#414140" }}
+                    >
                       {contrato.dataContrato}
                     </div>
                   </div>
@@ -245,7 +292,10 @@ export default function ContratosPage() {
                     <label className="text-gray-600 text-sm">
                       Valor do Empréstimo
                     </label>
-                    <div className="text-lg font-medium" style={{ color: '#414140' }}>
+                    <div
+                      className="text-lg font-medium"
+                      style={{ color: "#414140" }}
+                    >
                       R$ {contrato.valor.toLocaleString("pt-BR")}
                     </div>
                   </div>
@@ -253,14 +303,20 @@ export default function ContratosPage() {
                     <label className="text-gray-600 text-sm">
                       Valor da Parcela
                     </label>
-                    <div className="text-lg font-medium" style={{ color: '#414140' }}>
+                    <div
+                      className="text-lg font-medium"
+                      style={{ color: "#414140" }}
+                    >
                       R$ {contrato.valorParcela.toFixed(2)}
                     </div>
                   </div>
                 </div>
 
-                <div className="rounded-lg p-6 mb-6" style={{ backgroundColor: '#F7F0E6' }}>
-                  <h3 className="font-bold mb-4" style={{ color: '#414140' }}>
+                <div
+                  className="rounded-lg p-6 mb-6"
+                  style={{ backgroundColor: "#F7F0E6" }}
+                >
+                  <h3 className="font-bold mb-4" style={{ color: "#414140" }}>
                     Histórico de Descontos
                   </h3>
                   <div className="space-y-3">
@@ -274,10 +330,13 @@ export default function ContratosPage() {
                           <div
                             key={i}
                             className="flex justify-between items-center border-b pb-2"
-                            style={{ borderColor: '#BEA04A' }}
+                            style={{ borderColor: "#BEA04A" }}
                           >
                             <div>
-                              <div className="font-medium" style={{ color: '#414140' }}>
+                              <div
+                                className="font-medium"
+                                style={{ color: "#414140" }}
+                              >
                                 Parcela {parcelaNum}
                               </div>
                               <div className="text-sm text-gray-600">
@@ -295,10 +354,16 @@ export default function ContratosPage() {
                 </div>
 
                 <div className="flex space-x-4">
-                  <button className="flex-1 text-white py-3 rounded-lg hover:opacity-90 transition-colors font-medium" style={{ backgroundColor: '#BEA04A' }}>
+                  <button
+                    className="flex-1 text-white py-3 rounded-lg hover:opacity-90 transition-colors font-medium"
+                    style={{ backgroundColor: "#BEA04A" }}
+                  >
                     Gerar Extrato Completo
                   </button>
-                  <button className="flex-1 bg-gray-200 py-3 rounded-lg hover:bg-gray-300 transition-colors font-medium" style={{ color: '#414140' }}>
+                  <button
+                    className="flex-1 bg-gray-200 py-3 rounded-lg hover:bg-gray-300 transition-colors font-medium"
+                    style={{ color: "#414140" }}
+                  >
                     Baixar Contrato PDF
                   </button>
                 </div>

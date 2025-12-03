@@ -1,6 +1,10 @@
 "use client";
 
-import Navbar from "../components/Navbar";
+import { FaixaValor } from "@/components/FaixaValor";
+import Navbar from "../../components/Navbar";
+import { OrigemItem } from "@/components/OrigemItem";
+import { StatusBar } from "@/components/StatusBar";
+import { MetricCard } from "@/components/MetricCard";
 
 export default function RelatoriosPage() {
   const dadosSemanais = [
@@ -11,12 +15,12 @@ export default function RelatoriosPage() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F7F0E6' }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#F7F0E6" }}>
       <Navbar />
 
       <main className="container mx-auto px-6 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold" style={{ color: '#414140' }}>
+          <h1 className="text-3xl font-bold" style={{ color: "#414140" }}>
             Relatórios e Análises
           </h1>
           <p className="text-gray-600 mt-2">
@@ -53,22 +57,25 @@ export default function RelatoriosPage() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-xl font-bold mb-6" style={{ color: '#414140' }}>
+            <h3 className="text-xl font-bold mb-6" style={{ color: "#414140" }}>
               Propostas por Semana
             </h3>
             <div className="space-y-4">
               {dadosSemanais.map((item, index) => (
                 <div key={index}>
                   <div className="flex justify-between mb-2">
-                    <span style={{ color: '#414140' }}>{item.semana}</span>
-                    <span className="font-bold" style={{ color: '#BEA04A' }}>
+                    <span style={{ color: "#414140" }}>{item.semana}</span>
+                    <span className="font-bold" style={{ color: "#BEA04A" }}>
                       {item.propostas} propostas
                     </span>
                   </div>
                   <div className="bg-gray-200 rounded-full h-3">
                     <div
                       className="h-3 rounded-full"
-                      style={{ backgroundColor: '#BEA04A', width: `${(item.propostas / 20) * 100}%` }}
+                      style={{
+                        backgroundColor: "#BEA04A",
+                        width: `${(item.propostas / 20) * 100}%`,
+                      }}
                     ></div>
                   </div>
                 </div>
@@ -76,8 +83,13 @@ export default function RelatoriosPage() {
             </div>
             <div className="mt-6 pt-6 border-t border-gray-200">
               <div className="flex justify-between items-center">
-                <span className="font-medium" style={{ color: '#414140' }}>Média Semanal</span>
-                <span className="text-2xl font-bold" style={{ color: '#BEA04A' }}>
+                <span className="font-medium" style={{ color: "#414140" }}>
+                  Média Semanal
+                </span>
+                <span
+                  className="text-2xl font-bold"
+                  style={{ color: "#BEA04A" }}
+                >
                   15 propostas
                 </span>
               </div>
@@ -85,7 +97,7 @@ export default function RelatoriosPage() {
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-xl font-bold mb-6" style={{ color: '#414140' }}>
+            <h3 className="text-xl font-bold mb-6" style={{ color: "#414140" }}>
               Status das Propostas
             </h3>
             <div className="space-y-6">
@@ -119,7 +131,7 @@ export default function RelatoriosPage() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-xl font-bold mb-6" style={{ color: '#414140' }}>
+            <h3 className="text-xl font-bold mb-6" style={{ color: "#414140" }}>
               Contratos Ativos por Faixa de Valor
             </h3>
             <div className="space-y-4">
@@ -131,7 +143,7 @@ export default function RelatoriosPage() {
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-xl font-bold mb-6" style={{ color: '#414140' }}>
+            <h3 className="text-xl font-bold mb-6" style={{ color: "#414140" }}>
               Origem dos Clientes
             </h3>
             <div className="space-y-4">
@@ -142,10 +154,11 @@ export default function RelatoriosPage() {
           </div>
         </div>
 
-        <div className="rounded-lg shadow-lg p-8 text-white" style={{ background: 'linear-gradient(to right, #BEA04A, #8B7355)' }}>
-          <h3 className="text-2xl font-bold mb-4">
-            Insights e Recomendações
-          </h3>
+        <div
+          className="rounded-lg shadow-lg p-8 text-white"
+          style={{ background: "linear-gradient(to right, #BEA04A, #8B7355)" }}
+        >
+          <h3 className="text-2xl font-bold mb-4">Insights e Recomendações</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div>
               <h4 className="font-bold mb-2">Ponto Forte</h4>
@@ -170,102 +183,6 @@ export default function RelatoriosPage() {
           </div>
         </div>
       </main>
-    </div>
-  );
-}
-
-function MetricCard({
-  title,
-  value,
-  change,
-  trend,
-}: {
-  title: string;
-  value: string;
-  change: string;
-  trend: string;
-}) {
-  return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <div className="flex items-center justify-between mb-2">
-        <span
-          className={`text-sm font-medium ${
-            trend === "up" ? "text-green-600" : "text-red-600"
-          }`}
-        >
-          {change}
-        </span>
-      </div>
-      <div className="text-2xl font-bold mb-1" style={{ color: '#414140' }}>{value}</div>
-      <div className="text-gray-600 text-sm">{title}</div>
-    </div>
-  );
-}
-
-function StatusBar({
-  label,
-  value,
-  total,
-  color,
-}: {
-  label: string;
-  value: number;
-  total: number;
-  color: string;
-}) {
-  const percentual = (value / total) * 100;
-  return (
-    <div>
-      <div className="flex justify-between mb-2">
-        <span className="font-medium" style={{ color: '#414140' }}>{label}</span>
-        <span className="text-gray-600">
-          {value} ({percentual.toFixed(0)}%)
-        </span>
-      </div>
-      <div className="bg-gray-200 rounded-full h-3">
-        <div
-          className={`${color} h-3 rounded-full`}
-          style={{ width: `${percentual}%` }}
-        ></div>
-      </div>
-    </div>
-  );
-}
-
-function FaixaValor({
-  label,
-  quantidade,
-}: {
-  label: string;
-  quantidade: number;
-}) {
-  return (
-    <div className="flex justify-between items-center p-4 rounded-lg" style={{ backgroundColor: '#F7F0E6' }}>
-      <span style={{ color: '#414140' }}>{label}</span>
-      <span className="text-xl font-bold" style={{ color: '#BEA04A' }}>{quantidade}</span>
-    </div>
-  );
-}
-
-function OrigemItem({
-  label,
-  percentual,
-}: {
-  label: string;
-  percentual: number;
-}) {
-  return (
-    <div>
-      <div className="flex justify-between mb-2">
-        <span style={{ color: '#414140' }}>{label}</span>
-        <span className="font-bold" style={{ color: '#BEA04A' }}>{percentual}%</span>
-      </div>
-      <div className="bg-gray-200 rounded-full h-2">
-        <div
-          className="h-2 rounded-full"
-          style={{ backgroundColor: '#BEA04A', width: `${percentual}%` }}
-        ></div>
-      </div>
     </div>
   );
 }
